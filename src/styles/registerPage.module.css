@@ -1,0 +1,204 @@
+@font-face {
+    font-family: "Kanit", sans-serif;
+    src: url('../assets/Kanit-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signUp_wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    height: 100vh;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.signUp_container {
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 800px; /* Added max-width for large screens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic grid columns */
+    grid-gap: 20px; /* Added gap between grid items */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+.create_account {
+    background-color: #85BDA6;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signUp_title {
+    font-size: 2rem; /* Responsive font size */
+    font-family: 'Krona One', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.signUp_details {
+    font-family: 'Sora Variable', sans-serif;
+    color: #fff;
+    font-size: 1.2rem; /* Responsive font size */
+    text-align: center;
+    /* margin: 2rem 0; */
+    display: flex;
+}
+
+.signUp_details_i {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    width: 100%; /* Adjusted width for better responsiveness */
+    max-width: 300px; /* Added max-width for large screens */
+}
+
+.signUp_details_i:hover {
+    transform: scale(1.05);
+}
+
+.signUp_details_i:focus {
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.signbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.signUp_button {
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1.2rem; /* Responsive font size */
+    padding: 0.8rem 2.5rem;
+    border-radius: 70px;
+    border: none;
+    background-color: #2F4B26;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin-bottom: 2em;
+}
+
+.signUp_button:hover {
+    background-color: #fff;
+    color: #303036;
+    transform: scale(1.05);
+}
+
+.welcome_back {
+    background-color: #3E885B;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome_back_title {
+    font-size: 2rem; /* Responsive font size */
+    font-family: 'Krona One', sans-serif;
+    color: #fff;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.welcome_back_btn {
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1.2rem; /* Responsive font size */
+    padding: 0.8rem 2.5rem;
+    border-radius: 70px;
+    border: none;
+    background-color: #85BDA6;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.welcome_back_btn:hover {
+    background-color: #fff;
+    color: #303036;
+    transform: scale(1.05);
+}
+
+#uidnote,
+#pwdnote,
+#confirmnote {
+    transition: 0.5s;
+    color: #fff;
+    font-family: "Mitr-Regular", Helvetica;
+    text-shadow: 2px 1px 1px #30303649;
+    background-color: #3E885B;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    letter-spacing: normal;
+    line-height: 150%;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: #BEDCFE;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: #fff;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: #3E885B;
+    margin-left: 0.25rem;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    .signUp_container {
+        grid-template-columns: 1fr; /* Change to single column layout on smaller screens */
+    }
+    
+    .signUp_details_i {
+        width: calc(100% - 2rem); /* Adjusted width for smaller screens */
+        max-width: none; /* Removed max-width for smaller screens */
+    }
+}
+

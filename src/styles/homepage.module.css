@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    margin: 0;
+    min-height: 100vh;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.main {
+    display: grid;
+    grid-template-areas:
+        "sidebar header header header header header"
+        "sidebar main main main main main"
+        "sidebar main main main main main";
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #2F4B26;
+    min-height: 100vh;
+}
+
+.selection {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    list-style: none;
+    padding: 2em;
+    color: #ffffff;
+    font-family: 'Sora Variable', sans-serif;
+}
+
+#static {
+    color: #3e885b;
+}
+
+#static:hover {
+    cursor: default;
+}
+
+.links:hover {
+    transition: 0.5s;
+    color: #85bda6;
+    cursor: pointer;
+}
+
+#logout_link {
+    margin-top: 12em;
+}
+
+#logout_link:hover {
+    color: #C0D7BB;
+}
+
+.welcome_banner {
+    grid-area: header;
+    padding-left: 4em;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: start;
+}
+
+.userName {
+    color: #3E885B;
+}
+
+.main_screen {
+    font-family: 'Sora Variable', sans-serif;
+    grid-area: main;
+    height: 80vh;
+    overflow: auto; /* Allow scrolling within the main content area */
+}
+
+.main_hero_text {
+    display: flex;
+    margin-left: 4em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.mainscreen_subtext {
+    font-size: 2em;
+    margin-top: 6em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    margin: 4em;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainscreen_button {
+    margin-right: 2em;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 35px;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.mainscreen_button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #BEDCFE;
+    transform: scale(1.1);
+}
+
+.budgetCount {
+    color: #3E885B;
+}
+
+.after_button {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.logo {
+    font-family: 'Krona One', sans-serif;
+    margin: 2em;
+    font-size: 1em;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* For devices with width 320px and below */
+@media (max-width: 320px) {
+    .wrapper {
+        height: auto;
+    }
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main";
+    }
+    .sidebar {
+        height: auto;
+    }
+    .welcome_banner {
+        padding-left: 1em;
+    }
+    .main_hero_text {
+        margin-left: 1em;
+        font-size: 1.5em;
+    }
+    .mainscreen_subtext {
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+    .buttons {
+        flex-direction: column;
+        margin: 1em;
+    }
+    .mainscreen_button {
+        margin: 0.5em 0;
+        padding: 0.5em 1em;
+    }
+    .after_button {
+        font-size: 1.2em;
+    }
+    .links {
+        padding: 1em;
+        font-size: 0.8em;
+    }
+}
+
+
+
+/* For devices with width 1200px and below */
+@media (max-width: 1200px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main";
+    }
+    .welcome_banner {
+        padding-left: 2em;
+    }
+    .main_hero_text {
+        margin-left: 2em;
+        font-size: 1.5em;
+    }
+    .mainscreen_subtext {
+        font-size: 1.5em;
+        margin-top: 2em;
+    }
+    .buttons {
+        flex-direction: column;
+        margin: 2em;
+    }
+    .mainscreen_button {
+        margin: 1em 0;
+        padding: 0.5em 1em;
+    }
+    .after_button {
+        font-size: 1.5em;
+    }
+    .links {
+        padding: 1em;
+        font-size: 1em;
+    }
+    .sidebar{
+        position: fixed;
+        left: -250px;
+        top:0;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+    .sidebar.show{
+        left:0
+    }
+    .main.overlay{
+        opacity: 0.5;
+    }
+    .toggle_btn{
+        opacity: 0.5;
+        position: fixed;
+        top:15px;
+        right: 15px;
+        z-index: 101;
+        background: #2F4B26;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+}  

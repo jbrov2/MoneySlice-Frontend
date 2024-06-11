@@ -1,0 +1,235 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.main {
+    display: grid;
+    width: 90%;
+    max-width: 1200px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "wb su";
+    box-shadow: 0px 0px 5px black;
+    align-items: center;
+    border-radius: 70px;
+    background-color: #ffffff;
+}
+
+.login_holder,
+.signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    box-shadow: 0px 1px 10px #000000bd;
+}
+
+.login_holder {
+    grid-area: wb;
+    background-color: #85BDA6;
+    border-radius: 70px 0 0 70px;
+}
+
+.signUp {
+    grid-area: su;
+    background-color: #3E885B;
+    height: 100%;
+    border-radius: 0 70px 70px 0;
+}
+
+.login_details,
+.signUp_title,
+.login_title {
+    
+    color: #FFFAFF;
+}
+
+.login_title,
+.signUp_title {
+    font-family: 'Krona One', sans-serif;
+    font-size: 2em;
+    text-shadow: 5px 5px 4px #0000004a;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.login_details {
+    font-family: 'Sora Variable', sans-serif;
+    margin-top: 2em;
+    font-size: 1em;
+    text-align: center;
+    display: flex;
+}
+
+.input_style {
+    width: 80%;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 2px 4px 2px #0000004a;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.input_style:hover {
+    transform: scale(1.1);
+}
+
+.input_style:focus {
+    box-shadow: 2px 5px #c0d7bb5e;
+    transform: scale(1.2);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    width: 100%;
+}
+
+.submit_btn,
+.signUp_btn {
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    padding: 0.8em 2em;
+    border-radius: 70px;
+    border: none;
+    color: #FFFAFF;
+    box-shadow: 2px 4px 2px #0000004a;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.submit_btn {
+    background-color: #2F4B26;
+}
+
+.signUp_btn {
+    background-color: #85BDA6;
+}
+
+.signUp_btn:hover,
+.submit_btn:hover {
+    cursor: pointer;
+    box-shadow: 2px 5px #c0d7bb5e;
+    transform: scale(1.2);
+}
+
+.signUp_btn:hover {
+    color: #303036;
+    background-color: #FFFAFF;
+}
+
+.signUp_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+}
+#uidnote,
+#pwdnote {
+    transition: .5s;
+    font-family: 'Sora Variable', sans-serif;
+    text-shadow: 2px 1px 1px #30303649;
+    background-color: #3E885B;
+    color: #FFFAFF;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 2px 4px 2px #30303670;
+    line-height: 150%;
+    letter-spacing: normal;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: #FFFAFF;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: #3E885B;
+    margin-left: 0.25rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "wb"
+            "su";
+        border-radius: 20px;
+    }
+
+    .login_holder,
+    .signUp {
+        border-radius: 20px;
+    }
+
+    .login_holder {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .signUp {
+        border-radius: 0 0 20px 20px;
+    }
+
+    .login_title,
+    .signUp_title {
+        font-size: 1.5em;
+    }
+
+    .input_style {
+        width: 90%;
+    }
+
+    .button {
+        margin-top: 1em;
+    }
+
+    .submit_btn,
+    .signUp_btn {
+        font-size: 1em;
+        padding: 0.6em 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .login_title,
+    .signUp_title {
+        font-size: 1.2em;
+    }
+
+    .input_style {
+        width: 100%;
+    }
+
+    .submit_btn,
+    .signUp_btn {
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+    }
+}

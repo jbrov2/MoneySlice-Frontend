@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: 
+        "sidebar header header header header header header header"
+        "sidebar question question piechart piechart piechart info info"
+        "sidebar question question piechart piechart piechart info info"
+        "sidebar question question piechart piechart piechart info info"
+        ;
+    align-items: center;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.question_container {
+    grid-area: question;
+    margin-left: 4em;
+    background-color: #2F4B26;
+    width: 90%;
+    height: 80%;
+    padding: 0em 2em 0em 2em;
+    box-shadow: 6px 4px 4px black;
+    border-radius: 30px;
+}
+
+.questions {
+    padding-top: 2em;
+    margin-top: 6em;
+    text-align: center;
+    color: white;
+    margin-bottom: 2em;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 2em;
+}   
+
+.inputs {
+    padding: 0.8em 2em 0.8em 0em;
+    margin-left: 0em;
+    border-radius: 45px;
+}
+
+.inputs[type="text"] {
+    padding-left: 1em;
+    font-size: 24px;
+}
+
+.inputs[type="number"] {
+    padding-left: 1em;
+    font-size: 24px;
+}
+
+.navigation_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.nav_btn {
+    margin: 0em 2em 2em 2em;
+    padding: 0.8em 2em 0.8em 2em;
+    border-radius: 45px;
+    border: none;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    background-color: #ffffff;
+    transition: transform .5s;
+    transform: scale(1);
+}
+.welcome_banner{    margin-top: 3em;
+    grid-area: header;
+    padding-left: 4em;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: start;}
+
+.nav_btn:hover {
+    transform: scale(1.2);
+    transition: .5s;
+    background-color: #3E885B;
+    cursor: pointer;
+}
+
+.chart_area {
+    grid-area: piechart;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background: linear-gradient(to top, #ffffff, #85BDA6);
+    width: 80%;
+    height: 60%;
+    margin-right: 1em;
+    flex-direction: column;
+    /* padding: 0em 2em 0em 2em; */
+    box-shadow: 6px 4px 4px black;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.PieChart_h1{
+    font-family: 'Krona One', sans-serif;
+    color: #ffffff;
+    margin-top: 1em;
+}
+
+.PieChart{
+    /* width: 80%; */
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.info_section{
+    grid-area: info;
+    background-color: #2F4B26;
+    margin-right: 4em;
+    box-shadow: 6px 4px 4px black;
+    padding: 0em 2em 0em 2em;
+    height: 60%;
+    font-family: 'Krona One', sans-serif;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.item_log h3{
+    margin-top: 1em ;
+    text-align: center;
+}
+
+.item_log p{
+    padding: 2em 0em 0em 0em;
+    margin-left: 5em;
+    margin-top: 2em;
+    color: #85BDA6;
+    font-size: 1.2em;
+
+}
+
+.save_btn_holder{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    margin-top: 16em;
+    background-color: #3e885b;
+    margin-left: 4em;
+    padding: 2em;
+    width: 80%;
+    border-radius: 30px;
+    box-shadow: 6px 4px 4px black;
+}
+
+.save_btn{
+    
+    margin: 2em 2em 2em 2em;
+    padding: 0.8em 2em 0.8em 2em;
+    border-radius: 45px;
+    border: none;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    background-color: #ffffff;
+    transition: transform .5s;
+    transform: scale(1);
+}
+
+.createNewBudget{
+    margin: 2em 2em 2em 2em;
+    padding: 0.8em 2em 0.8em 2em;
+    border-radius: 45px;
+    border: none;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    background-color: #ffffff;
+    transition: transform .5s;
+    transform: scale(1);
+}
+
+.save_btn:hover, .createNewBudget:hover{
+    transform: scale(1.2);
+    transition: .5s;
+    background-color: #85BDA6;
+    cursor: pointer;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    height: 100vh;
+    background-color: #2F4B26;
+}
+
+.selection {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    list-style: none;
+    padding: 2em;
+    color: #ffffff;
+    font-family: 'Sora Variable', sans-serif;
+}
+
+#static {
+    color: #3e885b;
+}
+
+#static:hover {
+    cursor: default;
+}
+
+.links:hover {
+    transition: .5s;
+    color: #85bda6;
+    cursor: pointer;
+}
+
+#logout_link {
+    margin-top: 12em;
+}
+
+#logout_link:hover {
+    color: #C0D7BB;
+}
+
+.welcome_banner {
+    grid-area: header;
+    padding-left: 4em;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: start;
+}
+
+.logo {
+    font-family: 'Krona One', sans-serif;
+    margin: 2em;
+    font-size: 1em;
+    color: #ffffff;
+    cursor: default;
+}
+
+.custom_text {
+    color: #3E885B;
+}
+
+
+@media screen and (max-width:1200px){
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "question"
+            "piechart"
+            "info";
+        overflow-y: scroll;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .welcome_banner{
+        /* margin-top: 2em;
+        text-align: center;
+        padding-left: 1.5em; */
+    }
+    .links {
+        padding: 1em;
+        font-size: 1em;
+    }
+    .sidebar{
+        position: fixed;
+        left: -250px;
+        top:0;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+    .sidebar.show{
+        left:0
+    }
+    .main.overlay{
+        opacity: 0.5;
+    }
+    .toggle_btn{
+        opacity: 0.5;
+        position: fixed;
+        top:15px;
+        right: 15px;
+        z-index: 101;
+        background: #2F4B26;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .question_container{
+        height: 100%;
+        max-width: 300px;
+        margin: auto;
+    }
+    .inputs{
+        width: 100%;
+    }
+    .navigation_button{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav_btn{
+        padding: 0.5em;
+        font-size: 1em;
+        margin: 0.5em;
+    }
+
+    .question_container {
+        height: auto;
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .chart_area {
+        height: auto;
+        max-width: 300px;
+        margin: auto;
+        margin-top: 2em; /* Adjust the margin as needed */
+        padding-bottom: 2em;
+    }
+
+    .info_section {
+        height: auto;
+        max-width: 300px;
+        margin: auto;
+        margin-top: 2em; /* Adjust the margin as needed */
+        margin-bottom: 2em;
+    }
+
+}

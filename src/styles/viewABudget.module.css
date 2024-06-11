@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.main{
+    display: grid;
+    grid-template-areas: 
+    "sidebar header header header header header"
+    "sidebar main main main main main"
+    "sidebar main main main main main"
+    ;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    height: 100vh;
+    background-color: #2F4B26;
+}
+
+.selection {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    list-style: none;
+    padding: 2em;
+    color: #ffffff;
+    font-family: 'Sora Variable', sans-serif;
+}
+
+#static {
+    color: #3e885b;
+}
+
+#static:hover {
+    cursor: default;
+}
+
+.links:hover {
+    transition: .5s;
+    color: #85bda6;
+    cursor: pointer;
+}
+
+#logout_link {
+    margin-top: 12em;
+}
+
+#logout_link:hover {
+    color: #C0D7BB;
+}
+
+.welcome_banner {
+    margin-top: 3em;
+    grid-area: header;
+    padding-left: 4em;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: start;
+}
+
+.logo {
+    font-family: 'Krona One', sans-serif;
+    margin: 2em;
+    font-size: 1em;
+    color: #ffffff;
+    cursor: default;
+}
+
+.custom_text {
+    color: #3E885B;
+}
+
+.main_screen{
+    font-family: 'Sora Variable', sans-serif;
+    grid-area:main;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%; /* Limit the width to the viewport width */
+    padding: 0 1rem; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+.prompt_h2{
+    margin-top: 3em;
+    margin-bottom:4em ;
+    font-family: 'Krona One', sans-serif;
+    margin-left: 3em;
+    width: 100%;
+
+}
+
+.budget_Boxes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: inherit;
+    flex-wrap: wrap;
+}
+
+.budget_Box{
+    background-color: #3E885B;
+    padding: 4em;
+    color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px black;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.budget_Box:hover{
+    cursor: pointer;
+    transition: .5s;
+    background-color: #85BDA6;
+    transform: scale(1.1);
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    background-color: white;
+    padding: 4em;
+    border-radius: 30px;
+    text-align: center;
+    height: 60%;
+    width: 70%; /* Adjust width as needed */
+    max-width: 400px; /* Ensures it doesn't get too large on wider screens */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)
+}
+
+
+
+.close_button{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #85bda6;
+    padding: 0.8em 2em 0.8em 2em;
+    border: none;
+    border-radius: 35px;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    /* s */
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.close_button:hover{
+    cursor: pointer;
+    transition: .5s;
+    background-color: #BEDCFE;
+    transform: scale(1.1);
+}
+
+.noBudget{
+    margin-left: 5em;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+        "sidebar"
+        "main";
+    }
+
+    .welcome_banner {
+        padding-left: 1.5em;
+    }
+    .prompt_h2{
+        margin: 3em auto 4em auto; /* Center the element */
+        width: auto; /* Adjust width if necessary */
+        text-align: center;
+    }
+    .budget_Boxes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+    .budget_Box{
+        margin-bottom: 3em;
+        padding: 2em;
+    }
+    .links {
+        padding: 1em;
+        font-size: 1em;
+    }
+    .sidebar{
+        position: fixed;
+        left: -250px;
+        top:0;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+    .sidebar.show{
+        left:0
+    }
+    .main.overlay{
+        opacity: 0.5;
+    }
+    .toggle_btn{
+        opacity: 0.5;
+        position: fixed;
+        top:15px;
+        right: 15px;
+        z-index: 101;
+        background: #2F4B26;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+}

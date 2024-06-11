@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: linear-gradient(to bottom, #ffffff, #85BDA6);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: 
+        "sidebar header header header header header"
+        "sidebar main main main main main"
+        "sidebar main main main main main";
+    align-items: center;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+}
+
+.main_section {
+    font-family: 'Sora Variable', sans-serif;
+    grid-area: main;
+    height: 80vh;
+}
+
+.welcome_banner {
+    margin-top: 3em;
+    grid-area: header;
+    padding-left: 4em;
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: start;
+}
+
+.custom_text {
+    color: #3E885B;
+}
+
+.prompt_h2 {
+    margin-top: 3em;
+    margin-bottom: 4em;
+    font-family: 'Krona One', sans-serif;
+    margin-left: 3em;
+    width: 100%;
+}
+
+.budget_boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.budget_box {
+    background-color: #3E885B;
+    padding: 4em;
+    color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px black;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.budget_box:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: #85BDA6;
+    transform: scale(1.1);
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000; /* Ensure popup is above other content */
+}
+
+.popup_content {
+    font-family: 'Sora Variable', sans-serif;
+    background-color: white;
+    padding: 4em;
+    border-radius: 30px;
+    text-align: center;
+    width: 70%;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    z-index: 1001; /* Ensure popup content is above the overlay */
+}
+
+.popup_edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure edit popup is above other content */
+}
+
+.pop_edit_content {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "prev current"
+        "buttons buttons";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 2em;
+    padding: 4em;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 1280px;
+    height: 80%;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.edit_header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.prev_section {
+    grid-area: prev;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1em;
+    /* overflow-y: auto; */
+    height: 100%;
+}
+
+.prev_section h3{
+    margin-bottom: 1em;
+}
+
+.prev_section h4{
+    margin-bottom: 1em;
+}
+
+.prev_section p{
+    margin-bottom: 1em;
+}
+
+.current_section {
+    grid-area: current;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1em;
+    overflow-y: auto;
+    height: 100%;
+    background-color: #85bda675;
+    border-radius: 30px;
+}
+
+.current_info label{
+    margin-bottom: 1em;
+}
+.inputs{
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); */
+    margin-bottom: 1em;
+    border-radius: 15px;
+    padding: 1em 1em 1em 1em;
+    border:solid #85BDA6;
+    font-family: 'Sora Variable', sans-serif;
+    
+}
+.current_info{
+    display: flex;
+    flex-direction: column;
+}
+.input_group {
+    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.input_group input{
+    font-family: 'Sora Variable', sans-serif;
+    border-radius: 15px;
+    padding: 1em 1em 1em 1em;
+    border:solid #85BDA6;
+}
+
+.button_holder_edit {
+    grid-area: buttons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.save_button, .add_item_button, .cancel_button {
+    margin: 1em;
+    background-color: #85bda6;
+    padding: 0.8em 1em;
+    border: none;
+    border-radius: 35px;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.save_button:hover, .add_item_button:hover, .cancel_button:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: #BEDCFE;
+    transform: scale(1.1);
+}
+
+.button_holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit_button, .close_button {
+    margin: 1em;
+    background-color: #85bda6;
+    padding: 0.8em 1em;
+    border: none;
+    border-radius: 35px;
+    font-family: 'Sora Variable', sans-serif;
+    font-size: 1em;
+    transition: transform 1.3s;
+    transform: scale(1);
+}
+
+.edit_button:hover, .close_button:hover {
+    cursor: pointer;
+    transition: .5s;
+    background-color: #BEDCFE;
+    transform: scale(1.1);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    height: 100vh;
+    background-color: #2F4B26;
+}
+
+.selection {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    list-style: none;
+    padding: 2em;
+    color: #ffffff;
+    font-family: 'Sora Variable', sans-serif;
+}
+
+#static {
+    color: #3e885b;
+}
+
+#static:hover {
+    cursor: default;
+}
+
+.links:hover {
+    transition: .5s;
+    color: #85bda6;
+    cursor: pointer;
+}
+
+#logout_link {
+    margin-top: 12em;
+}
+
+#logout_link:hover {
+    color: #C0D7BB;
+}
+
+.logo {
+    font-family: 'Krona One', sans-serif;
+    margin: 2em;
+    font-size: 1em;
+    color: #ffffff;
+    cursor: default;
+}
+
+.no_budget {
+    margin-left: 5em;
+}
+
+
+.normal{
+    color: black;
+}
+
+@media screen and (max-width: 1200px){
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-areas: "header"
+        "sidebar"
+        "main";
+        overflow-y: scroll;
+    }
+    .prompt_h2{
+        margin: 3em auto 4em auto; /* Center the element */
+        width: auto; /* Adjust width if necessary */
+        text-align: center;
+    }
+    .budget_boxes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;   
+    }
+    .budget_box{
+        margin-bottom: 3em;
+        padding: 2em;
+    }
+    .links {
+        padding: 1em;
+        font-size: 1em;
+    }
+    .sidebar{
+        position: fixed;
+        left: -250px;
+        top:0;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 100;
+    }
+    .sidebar.show{
+        left:0
+    }
+    .main.overlay{
+        opacity: 0.5;
+    }
+    .toggle_btn{
+        opacity: 0.5;
+        position: fixed;
+        top:15px;
+        right: 15px;
+        z-index: 101;
+        background: #2F4B26;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .button_holder{
+        display: flex;
+        justify-content: center;
+    }
+    .pop_edit_content{
+        grid-template-areas: "header"
+                            "prev"
+                            "current"
+                            "buttons";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+        gap: 1em;
+        padding: 2em;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 600px;
+        overflow-y: auto;
+        overflow-x: none;
+        height: 80vh;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .current_section{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

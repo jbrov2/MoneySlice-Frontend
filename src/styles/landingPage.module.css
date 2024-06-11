@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+
+  .wrapper {
+    display: grid; 
+    overflow: hidden;
+    height: 100vh;
+    grid-template-areas:
+      "a a b b"
+      "a a b b"
+      "a a b b"; 
+    ;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4,1fr);
+    gap: 0em;
+
+  }
+  
+  .main {
+    display: contents;  
+  }
+  
+  .title {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    background-color: #2F4B26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 104px;
+    color: #85BDA6;
+    grid-area: a; /* Assign to grid area 'a' */
+    
+  }
+
+  .title p{
+    transition: transform 1.3s;
+    transform: scale(1);
+  }
+
+  .title:hover p{
+    cursor: pointer;
+    transform: scale(1.4);
+  }
+
+  #splice{
+    text-align: center;
+    display: block;
+  }
+  
+  .landing {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    grid-area: b; /* Assign to grid area 'b' */
+    background: linear-gradient(to top, #ffffff, #85BDA6); /* Gradient background */
+
+ 
+  }
+
+  .landing_block{
+    padding: 1.8em;
+    background-color: #2f4b26;
+    border-radius: 25px;
+    box-shadow: 2px 10px  #000000;
+  }
+  
+  .landing_text {
+  font-family: 'Sora Variable', sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-style: normal;
+   font-size: 4em;
+   margin: 0.25em;
+   color: #3E885B;
+
+
+  }
+
+  .landing_text:nth-child(3){
+    font-size: 56px;
+  }
+  
+  #special_text {
+    color: #85BDA6;
+    font-size: 104px;
+  }
+  
+
+  .buttons{
+    margin-top: 4em;
+  }
+  .signUp_btn,
+  .login_btn {
+    font-family: 'Sora Variable', sans-serif;
+    margin: 1em 1em;
+    padding: 1em 3em;
+    font-size: 1.5em;
+    border-radius: 54px;
+    border: none;
+    cursor: pointer;
+    background-color:#85BDA6;
+    
+    transition: transform 1.3s;
+    transform: scale(1);
+  }
+  
+  .signUp_btn:hover,
+  .login_btn:hover {
+    box-shadow: 2px 5px #c0d7bb5e;
+    transform: scale(1.2);
+    background-color:#C0D7BB ;
+  }
+  
+
+  /* For devices with width 320px and below */
+@media (max-width: 320px) {
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 'a'
+                            "b";
+    }
+  .title {
+      font-size: 52px;
+  }
+  .title p {
+      transform: scale(1);
+  }
+  .title:hover p {
+      transform: scale(1.2);
+  }
+  .landing_text {
+      font-size: 2em;
+  }
+  .landing_text:nth-child(3) {
+      font-size: 28px;
+  }
+  #special_text {
+      font-size: 52px;
+  }
+  .signUp_btn,
+  .login_btn {
+      padding: 0.5em 1em;
+      font-size: 1em;
+  }
+}
+
+
+
+/* For devices with width 1200px and below */
+@media (max-width: 1200px) {
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 'a'
+                            "b";
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+  .title {
+    padding: 1em;
+    font-size: 60px;
+  }
+  .title p {
+      transform: scale(1);
+  }
+  .title:hover p {
+      transform: scale(1.3);
+  }
+
+  .landing_text {
+      font-size: 1.4em;
+  }
+  .landing_text:nth-child(3) {
+      font-size: 1.4em;
+  }
+  .landing_block{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    padding: 0.8em;
+  }
+  #special_text {
+      font-size: 2em;
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+  .signUp_btn,
+  .login_btn {
+      padding: 1em;
+      font-size: 1em;
+  }
+}
